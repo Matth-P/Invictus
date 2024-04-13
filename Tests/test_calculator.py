@@ -10,24 +10,28 @@ from Calculadora.calculator import Calculator
 class Test_Calcualtor(unittest.TestCase):
     
         def test_sum(self):
-           calc = Calculator()
-           result = calc.sum(2,5)
-           self.assertEqual(result,7)
+           self.assertEqual(Calculator.sum(5,5),10)
+           self.assertEqual(Calculator.sum(-5,5),0)
+           self.assertEqual(Calculator.sum(-5,0),-5)
            
         def test_sub(self):
-            calc = Calculator()
-            result  = calc.sub(9,8)
-            self.assertEqual(result,1) 
+            self.assertEqual(Calculator.sub(5,5),0)
+            self.assertEqual(Calculator.sub(0,-5), 5)
+            self.assertEqual(Calculator.sub(-5,-5),0)  
         
         def test_mult(self):
-            calc = Calculator()
-            result = calc.mult(5,5)
-            self.assertEqual(result,25)
+            self.assertEqual(Calculator.mult(5,5),25)
+            self.assertEqual(Calculator.mult(5,-5),-25)
+            self.assertEqual(Calculator.mult(-5,-5),25)
         
         def test_div(self):
-            calc = Calculator()
-            result = calc.div(5,5)
-            self.assertEqual(result,1)
+            self.assertEqual(Calculator.div(25,5),5)
+            self.assertEqual(Calculator.div(5,5),1)
+            self.assertEqual(Calculator.div(5,5),1)
+            self.assertEqual(Calculator.div(5,25),0.2)
+            with  self.assertRaises(ZeroDivisionError):
+                Calculator.div(5,0)
+
                 
 if __name__ == "__main__":
     unittest.main()                

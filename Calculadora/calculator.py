@@ -1,11 +1,11 @@
 class Calculator:
-    def sum(self, a,b):
+    def sum(a,b):
         return a + b
-    def sub(self, a,b):
+    def sub(a,b):
         return a - b
-    def mult(self, a,b):
+    def mult(a,b):
         return a * b
-    def div(self, a,b):
+    def div(a,b):
         if b == 0:
-            return ValueError("Erro matemático: Divisão por 0")
+            raise ZeroDivisionError('Erro matemático: Divisão por 0')
         return a/b
