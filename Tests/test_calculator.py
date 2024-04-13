@@ -27,7 +27,7 @@ class Test_Calcualtor(unittest.TestCase):
         def test_div(self):
             self.assertEqual(Calculator.div(25,5),5)
             self.assertEqual(Calculator.div(5,5),1)
-            self.assertEqual(Calculator.div(5,5),1)
+            self.assertEqual(Calculator.div(5,-5),-1)
             self.assertEqual(Calculator.div(5,25),0.2)
             with  self.assertRaises(ZeroDivisionError):
                 Calculator.div(5,0)
