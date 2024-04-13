@@ -1,5 +1,5 @@
 import unittest
-from calculator import Calculator
+from Calc import Calculator
 
 class Test_Calcualtor(unittest.TestCase):
     
@@ -21,4 +21,10 @@ class Test_Calcualtor(unittest.TestCase):
         def test_div(self):
             calc = Calculator()
             result = calc.div(5,5)
-            self.assertEqual(result,1)      
+            self.assertEqual(result,1) 
+            
+            with self.assertRaises(ZeroDivisionError):
+                calc.div(5,0) 
+                
+if __name__ == "__main__":
+    unittest.main                   
