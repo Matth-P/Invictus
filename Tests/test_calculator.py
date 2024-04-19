@@ -13,16 +13,19 @@ class Test_Calcualtor(unittest.TestCase):
            self.assertEqual(Calculator.sum(5,5),10)
            self.assertEqual(Calculator.sum(-5,5),0)
            self.assertEqual(Calculator.sum(-5,0),-5)
+           self.assertEqual(Calculator.sum(5,0),5)
            
         def test_sub(self):
             self.assertEqual(Calculator.sub(5,5),0)
             self.assertEqual(Calculator.sub(0,-5), 5)
-            self.assertEqual(Calculator.sub(-5,-5),0)  
+            self.assertEqual(Calculator.sub(-5,-5),0)
+            self.assertEqual(Calculator.sub(5,0), 5)  
         
         def test_mult(self):
             self.assertEqual(Calculator.mult(5,5),25)
             self.assertEqual(Calculator.mult(5,-5),-25)
             self.assertEqual(Calculator.mult(-5,-5),25)
+            self.assertEqual(Calculator.mult(-5,0),0)
         
         def test_div(self):
             self.assertEqual(Calculator.div(25,5),5)
